@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
-  has_many :jobs 
+  validates :title, presence: true, uniqueness: {case_sensitive: false}
+  has_many :jobs
 
 end

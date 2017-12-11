@@ -24,7 +24,6 @@ describe "User can create a new category" do
 
       click_on "Create Category"
 
-      # expect(page).to have_content "#{category.title} already exists!"
       expect(current_path).to eq new_category_path
   end
 end
