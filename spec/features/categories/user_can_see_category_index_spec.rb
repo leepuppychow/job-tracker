@@ -13,6 +13,9 @@ describe "When user visits category index path" do
     visit categories_path
 
     expect(page).to have_content("All Categories")
-    expect(page).
+    expect(page).to have_content("Technology")
+    expect(page).to have_content("Business")
+    expect(page).to have_content("Engineering")
+    expect(page).to have_content("Education")
   end
 end
