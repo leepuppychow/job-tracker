@@ -19,9 +19,4 @@ describe "When user visits job show page" do
     expect(page).to have_content "Yet another!"
     expect(current_path).to eq company_job_path(job.company, job)
   end
-
-  it "when entering multiple comments, they will appear in reverse order of when
-    they were created" do
-
-  end
 end
