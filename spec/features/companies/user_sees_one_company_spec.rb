@@ -22,11 +22,21 @@ describe "User sees one company" do
     fill_in "contact[full_name]", with: "Lee"
     fill_in "contact[position]", with: "Student"
     fill_in "contact[email]", with: "email!"
-
     click_button "Create Contact"
+
     expect(current_path).to eq company_path(company)
     expect(page).to have_content "Lee"
     expect(page).to have_content "Student"
     expect(page).to have_content "email!"
+
+    fill_in "contact[full_name]", with: "Jay"
+    fill_in "contact[position]", with: "Brother"
+    fill_in "contact[email]", with: "email2!"
+    click_button "Create Contact"
+
+    expect(current_path).to eq company_path(company)
+    expect(page).to have_content "Jay"
+    expect(page).to have_content "Brother"
+    expect(page).to have_content "email2!"
   end
 end

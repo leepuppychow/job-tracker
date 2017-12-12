@@ -6,11 +6,10 @@ class ContactsController < ApplicationController
 
     if contact.save
       flash[:success] = "Contact #{contact.full_name} added!"
-      redirect_to company_path(@company)
     else
       flash[:notice] = "Missing contact information, please try again."
-      redirect_to company_path(@company)
     end
+    redirect_to company_path(@company)
   end
 
   private
