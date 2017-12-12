@@ -7,4 +7,8 @@ class Job < ApplicationRecord
   def comments_ordered
     comments.order(created_at: :desc)
   end
+
+  def self.sorted_by_level_of_interest
+    group(:level_of_interest).count
+  end
 end

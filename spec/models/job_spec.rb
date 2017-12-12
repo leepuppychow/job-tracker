@@ -45,4 +45,15 @@ describe Job do
       expect(job).to respond_to(:comments)
     end
   end
+
+  describe "Class methods" do
+    it ".sorted_by_level_of_interest" do
+      create_list(:job, 3, {level_of_interest: 50})
+      create_list(:job, 2, {level_of_interest: 40})
+      create_list(:job, 1, {level_of_interest: 100})
+      expected = {100=>1, 50=>3, 40=>2}
+
+      expect(Job.sorted_by_level_of_interest).to eq expected
+    end
+  end
 end
