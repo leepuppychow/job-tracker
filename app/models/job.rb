@@ -8,7 +8,11 @@ class Job < ApplicationRecord
     comments.order(created_at: :desc)
   end
 
-  def self.sorted_by_level_of_interest
+  def self.grouped_by_level_of_interest
     group(:level_of_interest).count
+  end
+
+  def self.grouped_by_location
+    group(:city).count
   end
 end

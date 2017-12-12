@@ -47,13 +47,22 @@ describe Job do
   end
 
   describe "Class methods" do
-    it ".sorted_by_level_of_interest" do
+    it ".grouped_by_level_of_interest" do
       create_list(:job, 3, {level_of_interest: 50})
       create_list(:job, 2, {level_of_interest: 40})
       create_list(:job, 1, {level_of_interest: 100})
       expected = {100=>1, 50=>3, 40=>2}
 
-      expect(Job.sorted_by_level_of_interest).to eq expected
+      expect(Job.grouped_by_level_of_interest).to eq expected
+    end
+
+    it ".grouped_by_location" do
+      create_list(:job, 3, {city: "Denver"})
+      create_list(:job, 2, {city: "Tokyo"})
+      create_list(:job, 1, {city: "Taipei"})
+      expected = {"Taipei"=>1, "Denver"=>3, "Tokyo"=>2}
+
+      expect(Job.grouped_by_location).to eq expected
     end
   end
 end
