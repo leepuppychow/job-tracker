@@ -12,7 +12,7 @@
   <%= f.text_field :city %>
 
   <%= f.label :category %>
-  <%= f.collection_select :category, Category.all, :title, :id %>
+  <%= f.collection_select :category, Category.all, :category, :title %>
 
   <%= f.submit %>
 <% end %>

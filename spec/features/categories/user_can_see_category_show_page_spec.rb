@@ -19,8 +19,6 @@ describe "When user visits category show path" do
 
     visit category_path(category)
 
-    save_and_open_page
-
     expect(page).to have_content category.title
     expect(page).to have_content "Captain"
     expect(page).to have_content "Fisherman"
