@@ -16,8 +16,7 @@ describe "User can create a new category" do
 
   it "if user tries to create an existing category
       he/she will be redirected to create new category form" do
-      category = Category.create!(title: "Fisherman")
-
+      create(:category, title: "Fisherman")
       visit new_category_path
 
       fill_in "category[title]", with: "Fisherman"
