@@ -5,3 +5,15 @@ All Jobs for <strong><%= @company.name %></strong>
   <%= link_to "Edit Job", edit_company_job_path(@company, job) %>
   <%= link_to "Delete", company_job_path(@company, job), method: "delete" %>
 <% end %>
+
+<h3> Contacts </h3>
+
+<%= form_for [@company,@contact] do |f| %>
+  <%= f.submit %>
+  <%= f.label :full_name %>
+  <%= f.text_field :full_name %>
+  <%= f.label :position %>
+  <%= f.text_field :position %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+<% end %>
