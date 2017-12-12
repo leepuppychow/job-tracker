@@ -11,8 +11,10 @@ class JobsController < ApplicationController
   end
 
   def create
+    byebug
     @company = Company.find(params[:company_id])
     @job = @company.jobs.new(job_params)
+
     if @job.save
       flash[:success] = "You created #{@job.title} at #{@company.name}"
       redirect_to company_job_path(@company, @job)
