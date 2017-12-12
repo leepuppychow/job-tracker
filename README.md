@@ -38,7 +38,7 @@ The rubric below describes additional functionality that you will need to add to
 
 [X] The user can view a list of all Categories on a single page, and each Category can be deleted from that page. There is also a link to “Edit” each Category, which takes the user to a form where they can update the Category.
 
-[] When the user creates a new Job, they are required to select its Category from a drop down menu of existing categories. They also see a link to create a new Category.
+[X] When the user creates a new Job, they are required to select its Category from a drop down menu of existing categories. They also see a link to create a new Category.
 
 [X] When the user visits a page for a specific Category, they see a list of Jobs in that Category.
 
@@ -54,11 +54,11 @@ The rubric below describes additional functionality that you will need to add to
 
 ### Contacts
 
-[] When the user visits the page for a specific Company, in addition to information about the job there is a form that allows them to enter a Contact for that Company (e.g. “Penelope Santorini”, “Hiring Manager”, “penelope@wooo.com”).
+[X] When the user visits the page for a specific Company, in addition to information about the job there is a form that allows them to enter a Contact for that Company (e.g. “Penelope Santorini”, “Hiring Manager”, “penelope@wooo.com”).
 
-[] Each Contact has a full name, position, email, and company (which relates to the company you’ve already created). It should be possible for a Company to have more than one Contact, but a Contact only works at one Company.
+[X] Each Contact has a full name, position, email, and company (which relates to the company you’ve already created). It should be possible for a Company to have more than one Contact, but a Contact only works at one Company.
 
-[] When the user submits a new contact, they are redirected back to the page for that specific company and the contact appears on the page.
+[X] When the user submits a new contact, they are redirected back to the page for that specific company and the contact appears on the page.
 
 ### Analysis
 
