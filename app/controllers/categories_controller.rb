@@ -43,7 +43,7 @@ class CategoriesController < ApplicationController
     category.destroy
     flash[:success] = "#{category.title} was deleted!"
 
-    redirect_to categories_path 
+    redirect_to categories_path
   end
 
 
