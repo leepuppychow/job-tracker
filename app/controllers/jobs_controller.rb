@@ -1,13 +1,18 @@
 class JobsController < ApplicationController
   def index
-    if params[:sort].nil?
-      @company = Company.find(params[:company_id])
-      @jobs = @company.jobs
-      @contact = Contact.new
-    elsif params[:sort].downcase.strip == "location"
+    if params[:sort] == "location"
       render :"dashboard/_location"
-    elsif params[:sort].downcase.strip == "interest"
+    elsif params[:sort] == "interest"
       render :"dashboard/_interest"
+    elsif params[:location]
+      @city = params[:location]
+      @jobs = Job.jobs_in_city(@city)
+      render :"dashboard/jobs_in_city"
+    elsif params[:sort].nil?
+      redirect_to root_path
+      # @company = Company.find(params[:company_id])
+      # @jobs = @company.jobs
+      # @contact = Contact.new
     end
   end
 
@@ -63,6 +68,5 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)
   end
-
 
 end

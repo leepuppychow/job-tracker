@@ -64,5 +64,14 @@ describe Job do
 
       expect(Job.grouped_by_location).to eq expected
     end
+
+    it ".jobs_in_city finds jobs in one city" do
+      create_list(:job, 3, {city: "Denver"})
+      create_list(:job, 2, {city: "Tokyo"})
+      create_list(:job, 1, {city: "Taipei"})
+
+      expect(Job.jobs_in_city("Denver").count).to eq 3
+      expect(Job.jobs_in_city("Taipei").count).to eq 1
+    end
   end
 end
