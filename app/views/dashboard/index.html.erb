@@ -4,3 +4,9 @@
 
 <h1> Jobs sorted by location </h1>
 <%= Job.grouped_by_location %>
+
+<h1> Top 3 Companies by Average Interest Level </h1>
+<% top_3 = Company.top_3_ranked_by_avg_level_of_interest %>
+<li> First: <%= top_3[0] %></li>
+<li> Second: <%= top_3[1] %></li>
+<li> Third: <%= top_3[2] %></li>
