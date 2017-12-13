@@ -9,9 +9,9 @@ class Job < ApplicationRecord
   end
 
   def self.grouped_by_level_of_interest
-    find_by_sql("SELECT COUNT(title) AS count, title FROM jobs
-    GROUP BY title ORDER BY count DESC").pluck(:title, :count)
-    # group(:level_of_interest).order("count_title DESC").count("title")
+    # find_by_sql("SELECT COUNT(title) AS count, title FROM jobs
+    # GROUP BY title ORDER BY count DESC").pluck(:title, :count)
+    group(:level_of_interest).order("level_of_interest DESC").count
   end
 
   def self.grouped_by_location
@@ -21,6 +21,4 @@ class Job < ApplicationRecord
   def self.jobs_in_city(city)
     where(city: city)
   end
-
-  
 end
