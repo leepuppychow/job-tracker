@@ -45,4 +45,58 @@ describe Job do
       expect(job).to respond_to(:comments)
     end
   end
+
+  describe "Class methods" do
+    it ".grouped_by_level_of_interest" do
+      create_list(:job, 3, {title: "Developer", level_of_interest: 50})
+      create_list(:job, 2, {title: "QA", level_of_interest: 40})
+      create_list(:job, 1, {title: "Engineer", level_of_interest: 100})
+      expected = {100=>1, 50=>3, 40=>2}
+
+      expect(Job.grouped_by_level_of_interest).to eq expected
+    end
+
+    it ".grouped_by_location" do
+      create_list(:job, 3, {city: "Denver"})
+      create_list(:job, 2, {city: "Tokyo"})
+      create_list(:job, 1, {city: "Taipei"})
+      expected = {"Denver"=>3, "Tokyo"=>2, "Taipei"=>1}
+
+      expect(Job.grouped_by_location).to eq expected
+    end
+
+    it ".jobs_in_city finds jobs in one city" do
+      create_list(:job, 3, {city: "Denver"})
+      create_list(:job, 2, {city: "Tokyo"})
+      create_list(:job, 1, {city: "Taipei"})
+
+      expect(Job.jobs_in_city("Denver").count).to eq 3
+      expect(Job.jobs_in_city("Taipei").count).to eq 1
+    end
+
+    it ".sorted_by_location sorts jobs alphabetically by city" do
+      job1 = create(:job, city: "Denver")
+      job2 = create(:job, city: "Austin")
+      job3 = create(:job, city: "San Diego")
+
+      expect(Job.sorted_by_location).to eq [job2, job1, job3]
+    end
+
+    it ".sorted_by_level_of_interest sorts jobs by interest level" do
+      job1 = create(:job, level_of_interest: 60)
+      job2 = create(:job, level_of_interest: 90)
+      job3 = create(:job, level_of_interest: 30)
+
+      expect(Job.sorted_by_level_of_interest).to eq [job2, job1, job3]
+    end
+
+    it ".jobs_in_city(city) finds all jobs in one city" do
+      job1 = create(:job, city: "Denver")
+      job2 = create(:job, city: "Austin")
+      job3 = create(:job, city: "Denver")
+
+      expect(Job.jobs_in_city("Denver")).to eq [job1, job3]
+
+    end
+  end
 end

@@ -1,8 +1,19 @@
 class JobsController < ApplicationController
   def index
-    @company = Company.find(params[:company_id])
-    @jobs = @company.jobs
-    @contact = Contact.new
+    if params[:sort] == "location"
+      render :"dashboard/location"
+    elsif params[:sort] == "interest"
+      render :"dashboard/interest"
+    elsif params[:location]
+      @city = params[:location]
+      @jobs = Job.jobs_in_city(@city)
+      render :"dashboard/jobs_in_city"
+    elsif params[:sort].nil?
+      redirect_to root_path
+      # @company = Company.find(params[:company_id])
+      # @jobs = @company.jobs
+      # @contact = Contact.new
+    end
   end
 
   def new
@@ -49,7 +60,8 @@ class JobsController < ApplicationController
     job = Job.find(params[:id])
     job.destroy
     flash[:success] = "#{job.title} was successfully deleted!"
-    redirect_to company_jobs_path(company)
+    # redirect_to company_jobs_path(company)
+    redirect_to company_path(company)
   end
 
   private
@@ -57,6 +69,5 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)
   end
-
 
 end

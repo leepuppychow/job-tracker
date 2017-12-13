@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :job do
-    title "JobTitle"
+    sequence(:title) {|n| "JobTitle#{n}"}
     description "JobDescription"
     level_of_interest 60
     city "Denver"
