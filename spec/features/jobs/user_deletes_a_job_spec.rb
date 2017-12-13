@@ -10,10 +10,10 @@ describe "User can delete a job" do
                               company_id: company.id,
                               category_id: category.id)
 
-    visit company_jobs_path(company)
+    visit company_path(company)
 
     click_link "Delete"
 
-    expect(page).to have_content("Developer was successfully deleted!")
+    expect(page).to have_content("#{job.title} was successfully deleted!")
   end
 end

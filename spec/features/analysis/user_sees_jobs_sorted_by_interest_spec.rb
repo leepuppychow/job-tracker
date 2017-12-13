@@ -2,16 +2,15 @@ require 'rails_helper'
 
 describe "when user visits path /jobs?sort=interest" do
   it "sees a page all jobs sorted by city with their count" do
-    create_list(:job, 4, {level_of_interest: 80})
-    create_list(:job, 3, {level_of_interest: 70})
-    create_list(:job, 6, {level_of_interest: 60})
-
+    job1 = create(:job, level_of_interest: 60)
+    job2 = create(:job, level_of_interest: 90)
+    job3 = create(:job, level_of_interest: 30)
 
     visit "/jobs?sort=interest"
 
     expect(page).to have_content "Jobs sorted by level of interest"
-    expect(page).to have_content "Tokyo: 6"
-    expect(page).to have_content "Denver: 4"
-    expect(page).to have_content "Taipei: 3"
+    expect(page).to have_content "#{job1.title}(60)"
+    expect(page).to have_content "#{job2.title}(90)"
+    expect(page).to have_content "#{job3.title}(30)"
   end
 end

@@ -21,13 +21,10 @@ describe "When user visits /dashboard route" do
 
     visit "/dashboard"
 
-    expect(page).to have_content "Jobs sorted by location"
-    expect(page).to have_content "Taipei"
-    expect(page).to have_content 1
-    expect(page).to have_content "Denver"
-    expect(page).to have_content 3
-    expect(page).to have_content "Tokyo"
-    expect(page).to have_content 2
+    expect(page).to have_content "Job Count by Location"
+    expect(page).to have_content "Taipei: 1"
+    expect(page).to have_content "Denver: 3"
+    expect(page).to have_content "Tokyo: 2"
   end
 
   it "sees the top 3 companies ranked by average level of interest" do
