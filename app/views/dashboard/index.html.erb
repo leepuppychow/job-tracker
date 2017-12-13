@@ -1,9 +1,12 @@
 <h1> Jobs sorted by level of interest </h1>
-<%= Job.grouped_by_level_of_interest %>
-
+<% Job.grouped_by_level_of_interest.each do |job| %>
+<%= job.join(": ") %></br>
+<% end %>
 
 <h1> Jobs sorted by location </h1>
-<%= Job.grouped_by_location %>
+<% Job.grouped_by_location.each do |job| %>
+<%= job.join(": ")%></br>
+<% end %>
 
 <h1> Top 3 Companies by Average Interest Level </h1>
 <% top_3 = Company.top_3_ranked_by_avg_level_of_interest %>

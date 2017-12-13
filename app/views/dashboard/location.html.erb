@@ -1,0 +1,4 @@
+<h1> Jobs sorted by location </h1>
+<% Job.grouped_by_location.each do |job| %>
+<%= job.join(": ")%></br>
+<% end %>
