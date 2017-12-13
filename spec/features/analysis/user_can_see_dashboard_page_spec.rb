@@ -8,8 +8,6 @@ describe "When user visits /dashboard route" do
 
     visit "/dashboard"
 
-    save_and_open_page
-
     expect(page).to have_content "Jobs sorted by level of interest"
     expect(page).to have_content 100
     expect(page).to have_content 1
@@ -19,11 +17,23 @@ describe "When user visits /dashboard route" do
     expect(page).to have_content 2
   end
 
-  it "sees the top 3 companies ranked by average level of interest" do
+  it "sees a count of jobs sorted by location" do
+    create_list(:job, 3, {city: "Denver"})
+    create_list(:job, 2, {city: "Tokyo"})
+    create_list(:job, 1, {city: "Taipei"})
 
+    visit "/dashboard"
+
+    expect(page).to have_content "Jobs sorted by location"
+    expect(page).to have_content "Taipei"
+    expect(page).to have_content 1
+    expect(page).to have_content "Denver"
+    expect(page).to have_content 3
+    expect(page).to have_content "Tokyo"
+    expect(page).to have_content 2
   end
 
-  it "sees a count of jobs sorted by location" do
+  it "sees the top 3 companies ranked by average level of interest" do
 
   end
 end

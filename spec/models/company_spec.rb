@@ -34,4 +34,17 @@ describe Company do
       expect(company).to respond_to(:contacts)
     end
   end
+
+  describe "Class Methods" do
+    it ".top_3_ranked_by_avg_level_of_interest" do
+      c1,c2,c3,c4 = create_list(:company, 4)
+      create_list(:job, 5, {company_id: c1.id, level_of_interest: 10})
+      create_list(:job, 5, {company_id: c3.id, level_of_interest: 30})
+      create_list(:job, 5, {company_id: c2.id, level_of_interest: 50})
+      create_list(:job, 5, {company_id: c4.id, level_of_interest: 70})
+      expected = [c4.name,c2.name,c3.name]
+
+      expect(Company.top_3_ranked_by_avg_level_of_interest).to eq expected
+    end
+  end
 end
