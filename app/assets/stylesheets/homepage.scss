@@ -1,0 +1,20 @@
+body{
+  background: url('beach.jpg') no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.container{
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-links{
+  padding: 50px;
+  margin: 100px;
+  border: black solid 3px;
+}
