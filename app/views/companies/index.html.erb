@@ -1,11 +1,16 @@
-<h3>All Companies</h3>
+<nav>
+  <h1>All Companies</h1>
+  <p><%= link_to "Back Home", root_path %><p>
+</nav>
 
-<ul>
-  <% @companies.each do |company| %>
-  <li class=company_<%= company.id %>>
-    <%= link_to company.name, company_path(company) %>: 
+<div class="companies-container">
+<% @companies.each do |company| %>
+<article class="each-company">
+  <h3 class="company-title"><%= link_to company.name, company_path(company) %></h3>
+  <p>
     <%= link_to "Edit", edit_company_path(company) %>
     <%= link_to "Delete", company_path(company), method: "delete" %>
-  </li>
-  <% end %>
-</ul>
+  </p>
+</article>
+<% end %>
+</div>
