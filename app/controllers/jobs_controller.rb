@@ -5,9 +5,9 @@ class JobsController < ApplicationController
       @jobs = @company.jobs
       @contact = Contact.new
     elsif params[:sort].downcase.strip == "location"
-      render :"dashboard/location"
+      render :"dashboard/_location"
     elsif params[:sort].downcase.strip == "interest"
-      render :"dashboard/interest"
+      render :"dashboard/_interest"
     end
   end
 

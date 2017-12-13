@@ -76,15 +76,15 @@ The rubric below describes additional functionality that you will need to add to
 
 ### Databases
 
-[] The database has appropriate tables and columns to create relationships between tables
+[X] The database has appropriate tables and columns to create relationships between tables
 
-[] Table and column names follow convention
+[X] Table and column names follow convention
 
 ### Routes
 
 [] Routes are defined for all functionality and not any additional functionality
 
-[] All routes conform to RESTful conventions for resources
+[X] All routes conform to RESTful conventions for resources
 
 [] Routes to pages that are not specifically for resources stored in the database are not named in a way that an experienced developer would find surprising
 
@@ -92,7 +92,7 @@ The rubric below describes additional functionality that you will need to add to
 
 [] The developer has moved logic out of the controllers and into the models/POROs where appropriate.
 
-[] The developer uses strong params in a private method
+[X] The developer uses strong params in a private method
 
 [] Instance variables being passed to views are appropriately named and limited in number
 
