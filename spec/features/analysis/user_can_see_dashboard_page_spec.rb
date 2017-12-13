@@ -8,10 +8,10 @@ describe "When user visits /dashboard route" do
 
     visit "/dashboard"
 
-    expect(page).to have_content "Jobs sorted by level of interest"
-    expect(page).to have_content "Developer: 3"
-    expect(page).to have_content "QA: 2"
-    expect(page).to have_content "Engineer: 1"
+    expect(page).to have_content "Job Count by Level of Interest"
+    expect(page).to have_content "50: 3"
+    expect(page).to have_content "40: 2"
+    expect(page).to have_content "100: 1"
   end
 
   it "sees a count of jobs sorted by location" do

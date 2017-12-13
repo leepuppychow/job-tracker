@@ -1,5 +1,4 @@
 <h1> Jobs sorted by level of interest </h1>
-
 <% Job.sorted_by_level_of_interest.each do |job| %>
-<%= job.join(": ") %></br>
+  <%= link_to "#{job.title}(#{job.level_of_interest})", company_job_path(job.company, job) %></br>
 <% end %>

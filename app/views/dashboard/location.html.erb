@@ -1,4 +1,4 @@
 <h1> Jobs sorted by location </h1>
 <% Job.sorted_by_location.each do |job| %>
-  <%= job.join(": ")%></br>
+  <%= link_to (job.title + " in " + job.city), company_job_path(job.company, job) %></br>
 <% end %>
