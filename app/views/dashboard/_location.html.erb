@@ -1,4 +1,0 @@
-<h1> Jobs sorted by location </h1>
-<% Job.grouped_by_location.each do |job| %>
-  <%= link_to job.join(": "), "/jobs?location=#{job.first}"%></br>
-<% end %>

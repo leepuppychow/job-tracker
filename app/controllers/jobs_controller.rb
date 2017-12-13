@@ -1,9 +1,9 @@
 class JobsController < ApplicationController
   def index
     if params[:sort] == "location"
-      render :"dashboard/_location"
+      render :"dashboard/location"
     elsif params[:sort] == "interest"
-      render :"dashboard/_interest"
+      render :"dashboard/interest"
     elsif params[:location]
       @city = params[:location]
       @jobs = Job.jobs_in_city(@city)
