@@ -51,6 +51,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chartkick (2.2.5)
     childprocess (0.7.1)
       ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.2.2)
@@ -72,6 +73,8 @@ GEM
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    highcharts-rails (6.0.3)
+      railties (>= 3.1)
     i18n (0.8.6)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -197,8 +200,10 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara (~> 2.13)
+  chartkick
   coffee-rails (~> 4.2)
   factory_bot_rails
+  highcharts-rails
   jbuilder (~> 2.5)
   launchy
   listen (>= 3.0.5, < 3.2)

@@ -7,6 +7,6 @@
 </nav>
 
 
-<% Job.sorted_by_level_of_interest.each do |job| %>
+<% @jobs.each do |job| %>
   <%= link_to "#{job.title}(#{job.level_of_interest})", company_job_path(job.company, job) %></br>
 <% end %>

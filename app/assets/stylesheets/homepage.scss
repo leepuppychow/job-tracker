@@ -41,6 +41,7 @@ nav {
 .homepage-links{
   text-decoration: none;
   font-size: 30px;
+  background-color: #5a7aad;
   color: black;
   padding: 50px;
   margin: 25px;
@@ -51,25 +52,14 @@ nav {
   font-size: 45px;
 }
 
-
-.each-company {
+.each-item {
   height: 200px;
   width: 300px;
+  border: black solid 1px;
+  background-color: #bdcfed;
+  margin-bottom: 20px;
 }
 
-.each-category{
-  height: 200px;
-  width: 300px;
-}
-.each-job {
-  height: 200px;
-  width: 300px;
-}
-
-#company-title, #category-title {
-  text-decoration: none;
-  color: black;
-}
 
 .categories-container{
   display: flex;
@@ -88,6 +78,7 @@ nav {
 .edit-link {
   text-decoration: none;
   color: black;
+  margin-left: 10px;
 }
 
 th {
@@ -112,4 +103,10 @@ th {
 
 #job-show-table th{
   padding: 10px;
+}
+
+#company-title, #category-title, #job-title {
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
 }

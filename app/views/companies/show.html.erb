@@ -7,8 +7,8 @@
 
 <div class="row-container">
 <% @jobs.each do |job| %>
-<article class="each-job">
-  <h3><%= link_to job.title, company_job_path(@company, job)%></h3>
+<article class="each-item">
+  <h3><%= link_to job.title, company_job_path(@company, job), id: "job-title"%></h3>
   <p>
     <%= link_to "Edit Job", edit_company_job_path(@company, job), class: "edit-link" %>
     <%= link_to "Delete", company_job_path(@company, job), method: "delete", class: "delete-link" %>

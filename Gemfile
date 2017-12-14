@@ -42,6 +42,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'factory_bot_rails'
+  gem 'highcharts-rails'
 end
 
 group :development do

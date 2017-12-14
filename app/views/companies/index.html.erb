@@ -2,12 +2,13 @@
   <h1>All Companies</h1>
   <%= link_to "Home", root_path, class: "nav-links" %>
   <%= link_to "Dashboard", "/dashboard", class: "nav-links" %>
+  <%= link_to "Job Categories", categories_path, class: "nav-links" %>
   <%= link_to "New Company", new_company_path, class: "nav-links" %>
 </nav>
 
 <div class="row-container">
 <% @companies.each do |company| %>
-<article class="each-company">
+<article class="each-item">
   <h3><%= link_to company.name, company_path(company), id: "company-title" %></h3>
   <p>
     <%= link_to "Edit", edit_company_path(company), class: "edit-link" %>

@@ -6,6 +6,6 @@
   <%= link_to "Dashboard", "/dashboard", class: "nav-links" %>
 </nav>
 
-<% Job.sorted_by_location.each do |job| %>
+<% @jobs.each do |job| %>
   <%= link_to (job.title + " - " + job.city), company_job_path(job.company, job) %></br>
 <% end %>
