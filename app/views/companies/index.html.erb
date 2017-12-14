@@ -1,10 +1,10 @@
 <nav>
   <h1>All Companies</h1>
-  <%= link_to "Back Home", root_path, class: "nav-links" %>
+  <%= link_to "Home", root_path, class: "nav-links" %>
   <%= link_to "New Company", new_company_path, class: "nav-links" %>
 </nav>
 
-<div class="companies-container">
+<div class="row-container">
 <% @companies.each do |company| %>
 <article class="each-company">
   <h3><%= link_to company.name, company_path(company), id: "company-title" %></h3>

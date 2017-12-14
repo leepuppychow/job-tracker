@@ -1,8 +1,8 @@
 <nav>
   <h1>Edit Job at: <%= @company.name %></h1>
-  <%= link_to "Back Home", root_path, class: "nav-links" %>
-  <%= link_to "Company List", companies_path, class: "nav-links" %>
-  <%= link_to "Categories List", categories_path, class: "nav-links" %>
+  <%= link_to "Home", root_path, class: "nav-links" %>
+  <%= link_to "Companies", companies_path, class: "nav-links" %>
+  <%= link_to "Job Categories", categories_path, class: "nav-links" %>
 </nav>
 
 <%= render partial: "form" %>

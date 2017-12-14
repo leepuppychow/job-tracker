@@ -1,10 +1,10 @@
 <nav>
   <h1>All Categories</h1>
-  <%= link_to "Back Home", root_path, class: "nav-links" %>
+  <%= link_to "Home", root_path, class: "nav-links" %>
   <%= link_to "New Category", new_category_path, class: "nav-links" %>
 </nav>
 
-<div class="categories-container">
+<div class="row-container">
 
 <% @categories.each do |category| %>
 <article class="each-category">

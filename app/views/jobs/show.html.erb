@@ -1,8 +1,8 @@
 <nav>
   <h1>Job Title: <%= @job.title %></h1>
-  <%= link_to "Back Home", root_path, class: "nav-links" %>
-  <%= link_to "Company List", companies_path, class: "nav-links" %>
-  <%= link_to "Go to: #{@job.company.name}", company_path(@job.company), class: "nav-links" %>
+  <%= link_to "Home", root_path, class: "nav-links" %>
+  <%= link_to "Companies", companies_path, class: "nav-links" %>
+  <%= link_to "Back to: #{@job.company.name}", company_path(@job.company), class: "nav-links" %>
 </nav>
 
 <table id="job-show-table">

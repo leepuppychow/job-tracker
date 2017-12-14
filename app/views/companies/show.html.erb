@@ -1,11 +1,11 @@
 <nav>
   <h1>Jobs at: <%= @company.name %></h1>
-  <%= link_to "Back Home", root_path, class: "nav-links" %>
-  <%= link_to "Company List", companies_path, class: "nav-links" %>
+  <%= link_to "Home", root_path, class: "nav-links" %>
+  <%= link_to "Companies", companies_path, class: "nav-links" %>
   <%= link_to "New Job", new_company_job_path(@company), class: "nav-links" %>
 </nav>
 
-<div class="jobs-container">
+<div class="row-container">
 <% @jobs.each do |job| %>
 <article class="each-job">
   <h3><%= link_to job.title, company_job_path(@company, job)%></h3>

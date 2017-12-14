@@ -6,7 +6,7 @@ describe "When user visits category edit path" do
 
     visit edit_category_path(category)
 
-    expect(page).to have_content "Edit Category"
+    expect(page).to have_content "Edit Job Category"
 
     fill_in "category[title]", with: "Hunting"
     click_button "Update Category"
