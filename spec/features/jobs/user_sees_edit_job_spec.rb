@@ -23,6 +23,7 @@ describe "User can edit an existing job" do
     fill_in "job[description]", with: "So fun!"
     fill_in "job[level_of_interest]", with: 80
     fill_in "job[city]", with: "Seattle"
+    select "Software", :from => "job[category_id]"
 
     click_button "Update Job"
 
@@ -30,5 +31,7 @@ describe "User can edit an existing job" do
     expect(page).to have_content("Software Developer")
     expect(page).to have_content("80")
     expect(page).to have_content("Seattle")
+    expect(page).to have_content("Software")
+
   end
 end

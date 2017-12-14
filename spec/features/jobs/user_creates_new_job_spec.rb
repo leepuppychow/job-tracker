@@ -6,14 +6,11 @@ describe "User creates a new job" do
     category = Category.create!(title: "Technology")
 
     visit new_company_job_path(company)
-
     fill_in "job[title]", with: "Developer"
     fill_in "job[description]", with: "So fun!"
     fill_in "job[level_of_interest]", with: 80
     fill_in "job[city]", with: "Denver"
-
-    fill_in "job[category]", with: category
-    #how to test for selecting a drop down menu option
+    select "Technology", :from => "job[category_id]"
 
     click_button "Create"
 
@@ -23,5 +20,6 @@ describe "User creates a new job" do
     expect(page).to have_content("So fun!")
     expect(page).to have_content("80")
     expect(page).to have_content("Denver")
+    expect(page).to have_content("Technology")
   end
 end
