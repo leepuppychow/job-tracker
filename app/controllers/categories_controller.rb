@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
       flash[:success] = "#{@category.title} added!".upcase
       redirect_to category_path(@category)
     else
-      flash[:notice] = "Please enter a category title, or category already exists."
+      flash[:notice] = "Please enter a category title, or that category already exists."
       redirect_to new_category_path
     end
   end

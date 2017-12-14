@@ -10,9 +10,6 @@ class JobsController < ApplicationController
       render :"dashboard/jobs_in_city"
     elsif params[:sort].nil?
       redirect_to root_path
-      # @company = Company.find(params[:company_id])
-      # @jobs = @company.jobs
-      # @contact = Contact.new
     end
   end
 

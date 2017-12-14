@@ -1,4 +1,11 @@
-<h1> Jobs in <%= @city %> </h1>
+<nav>
+  <h1> Jobs in <%= @city %> </h1>
+  <%= link_to "Home", root_path, class: "nav-links" %>
+  <%= link_to "Companies", companies_path, class: "nav-links" %>
+  <%= link_to "Job Categories", categories_path, class: "nav-links" %>
+  <%= link_to "Dashboard", "/dashboard", class: "nav-links" %>
+</nav>
+
 <% @jobs.each do |job| %>
-<%= link_to job.title, company_job_path(job.company, job) %></br>
+<%= link_to "#{job.title} - #{job.company.name}", company_job_path(job.company, job) %></br>
 <% end %>

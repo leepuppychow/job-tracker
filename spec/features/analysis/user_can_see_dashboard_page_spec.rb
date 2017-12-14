@@ -36,8 +36,8 @@ describe "When user visits /dashboard route" do
 
     visit "/dashboard"
 
-    expect(page).to have_content "First: #{c4.name}"
-    expect(page).to have_content "Second: #{c2.name}"
-    expect(page).to have_content "Third: #{c3.name}"
+    expect(page).to have_content c4.name
+    expect(page).to have_content c2.name
+    expect(page).to have_content c3.name
   end
 end

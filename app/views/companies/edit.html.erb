@@ -1,3 +1,7 @@
-<h2>Edit <%= @company.name %> here!</h2>
+<nav>
+  <h1>Edit - <%= @company.name %></h1>
+  <%= link_to "Home", root_path, class: "nav-links" %>
+  <%= link_to "Companies", companies_path, class: "nav-links" %>
+</nav>
 
 <%= render partial: "form" %>

@@ -9,7 +9,6 @@ class Company < ApplicationRecord
       JOIN jobs ON companies.id = jobs.company_id
       GROUP BY name
       ORDER BY avg_interest DESC
-      LIMIT 3").pluck(:name)
-    # joins(:jobs).group(:name).average(:level_of_interest)
+      LIMIT 3").pluck(:name, :avg_interest)
   end
 end

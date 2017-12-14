@@ -1,9 +1,20 @@
-<h1> All Categories </h1>
+<nav>
+  <h1>All Categories</h1>
+  <%= link_to "Home", root_path, class: "nav-links" %>
+  <%= link_to "Dashboard", "/dashboard", class: "nav-links" %>
+  <%= link_to "New Category", new_category_path, class: "nav-links" %>
+</nav>
+
+<div class="row-container">
 
 <% @categories.each do |category| %>
-<li class=category_<%=category.id%>>
-  <%= link_to category.title, category_path(category) %></li>
-  <%= link_to "Edit", edit_category_path(category) %>
-  <%= link_to "Delete", category_path(category), method: "delete" %>
-</li>
+<article class="each-category">
+  <h2><%= link_to category.title, category_path(category), id: "category-title" %></h2>
+  <p>
+    <%= link_to "Edit", edit_category_path(category), class: "edit-link" %>
+    <%= link_to "Delete", category_path(category), method: "delete", class: "delete-link" %>
+  </p>
+</article>
 <% end  %>
+
+</div>

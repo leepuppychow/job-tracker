@@ -42,7 +42,7 @@ describe Company do
       create_list(:job, 5, {company_id: c3.id, level_of_interest: 30})
       create_list(:job, 5, {company_id: c2.id, level_of_interest: 50})
       create_list(:job, 5, {company_id: c4.id, level_of_interest: 70})
-      expected = [c4.name,c2.name,c3.name]
+      expected = [[c4.name,70],[c2.name,50],[c3.name,30]]
 
       expect(Company.top_3_ranked_by_avg_level_of_interest).to eq expected
     end

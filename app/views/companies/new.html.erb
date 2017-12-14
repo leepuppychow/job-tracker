@@ -1,4 +1,7 @@
-<h2>Create a new company here!</h2>
+<nav>
+  <h1>Add New Company</h1>
+  <%= link_to "Home", root_path, class: "nav-links" %>
+  <%= link_to "Companies", companies_path, class: "nav-links" %>
+</nav>
 
 <%= render partial: "form" %>
-

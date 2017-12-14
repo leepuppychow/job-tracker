@@ -1,18 +1,28 @@
 <%= form_for [@company, @job] do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<table>
+  <tr>
+    <th><%= f.label :title, class: "form-label" %></th>
+    <th><%= f.text_field :title, class: "form-field" %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :description, class: "form-label" %></th>
+    <th><%= f.text_field :description, class: "form-field" %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :level_of_interest, class: "form-label" %></th>
+    <th><%= f.number_field :level_of_interest, class: "form-field" %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :city, class: "form-label" %></th>
+    <th><%= f.text_field :city, class: "form-field" %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :category_id, class: "form-label" %></th>
+    <th><%= f.collection_select :category_id, Category.all, :id, :title, {}, id: "drop-down-menu" %></th>
+  </tr>
+  <tr>
+    <th colspan=2 ><%= f.submit%></th>
+  </tr>
+</table>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-
-  <%= f.label :level_of_interest %>
-  <%= f.number_field :level_of_interest %>
-
-  <%= f.label :city %>
-  <%= f.text_field :city %>
-
-  <%= f.label :category_id %>
-  <%= f.collection_select :category_id, Category.all, :id, :title %>
-
-  <%= f.submit %>
 <% end %>

@@ -1,4 +1,12 @@
-<h1> Jobs sorted by level of interest </h1>
+<nav>
+  <h1> Jobs sorted by level of interest </h1>
+  <%= link_to "Home", root_path, class: "nav-links" %>
+  <%= link_to "Companies", companies_path, class: "nav-links" %>
+  <%= link_to "Job Categories", categories_path, class: "nav-links" %>
+  <%= link_to "Dashboard", "/dashboard", class: "nav-links" %>
+</nav>
+
+
 <% Job.sorted_by_level_of_interest.each do |job| %>
   <%= link_to "#{job.title}(#{job.level_of_interest})", company_job_path(job.company, job) %></br>
 <% end %>

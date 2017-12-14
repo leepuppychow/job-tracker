@@ -1,15 +1,33 @@
-<h1> Job Count by Level of Interest </h1>
-<% Job.grouped_by_level_of_interest.each do |job| %>
-<%= job.join(": ") %></br>
-<% end %>
+<nav>
+  <h1>Dashboard</h1>
+  <%= link_to "Home", root_path, class: "nav-links" %>
+  <%= link_to "Companies", companies_path, class: "nav-links" %>
+  <%= link_to "Job Categories", categories_path, class: "nav-links" %>
+  <%= link_to "Jobs by Location", "/jobs?sort=location", class: "nav-links" %>
+  <%= link_to "Jobs by Interest Level", "/jobs?sort=interest", class: "nav-links" %>
+</nav>
 
-<h1> Job Count by Location </h1>
-<% Job.grouped_by_location.each do |job| %>
-  <%= link_to job.join(": "), "/jobs?location=#{job.first}"%></br>
-<% end %>
+<div class="row-container">
+  <section>
+    <h2> Job Count by Location </h2>
+    <% Job.grouped_by_location.each do |job| %>
+      <%= link_to job.join(": "), "/jobs?location=#{job.first}"%></br>
+    <% end %>
+  </section>
 
-<h1> Top 3 Companies by Average Interest Level </h1>
-<% top_3 = Company.top_3_ranked_by_avg_level_of_interest %>
-<li> First: <%= top_3[0] %></li>
-<li> Second: <%= top_3[1] %></li>
-<li> Third: <%= top_3[2] %></li>
+  <section>
+    <h2> Top 3 Companies by Average Interest Level </h2>
+    <% top_3 = Company.top_3_ranked_by_avg_level_of_interest %>
+    <li> <%= top_3[0][0] %>(<%= top_3[0][1].floor %>)</li>
+    <li> <%= top_3[1][0] %>(<%= top_3[1][1].floor %>)</li>
+    <li> <%= top_3[2][0] %>(<%= top_3[2][1].floor %>)</li>
+  </section>
+
+  <section>
+    <h2> Job Count by Level of Interest </h2>
+    <% Job.grouped_by_level_of_interest.each do |job| %>
+    <%= job.join(": ") %></br>
+    <% end %>
+  </section>
+
+</div>
