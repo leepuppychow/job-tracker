@@ -1,19 +1,25 @@
 body{
-  background: url('beach.jpg') no-repeat;
+  background: #F0F8FF no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   height:100%;
+  font-family: "Amazon Ember", Arial,sans-serif;
 }
 
 nav {
   display: inline-block;
   width: 100%;
+  background: #879ab7;
   h1{
     float: left;
+    text-decoration: underline;
   }
-  p{
+  .nav-links{
+    padding: 20px;
     float: right;
+    text-decoration: none;
+    color: black;
   }
 }
 
@@ -26,12 +32,26 @@ nav {
 }
 
 .homepage-links{
+  text-decoration: none;
+  font-size: 30px;
+  color: black;
   padding: 50px;
-  margin: 75px;
+  margin: 25px;
   border: black solid 3px;
+  border-radius: 10%;
+}
+.homepage-links:hover{
+  font-size: 45px;
 }
 
 .companies-container{
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.jobs-container{
   display: flex;
   flex-flow: row wrap;
   height: 100%;
@@ -44,10 +64,59 @@ nav {
   width: 300px;
 }
 
+.each-category{
+  height: 200px;
+  width: 300px;
+}
+.each-job {
+  height: 200px;
+  width: 300px;
+}
+
+#company-title{
+  text-decoration: none;
+  color: black;
+}
+
 .categories-container{
   display: flex;
   flex-flow: row wrap;
   height: 100%;
   justify-content: space-between;
   align-items: center;
+}
+
+.delete-link {
+  margin-left: 30px;
+  text-decoration: none;
+  color: black;
+}
+
+.edit-link {
+  text-decoration: none;
+  color: black;
+}
+
+th {
+  text-align: left;
+}
+
+.form-label {
+  font-size: 20px;
+}
+
+.form-field {
+  font-size: 20px;
+}
+
+#drop-down-menu {
+  font-size: 20px;
+}
+
+#job-show-table{
+  font-size: 20px;
+}
+
+#job-show-table th{
+  padding: 10px;
 }

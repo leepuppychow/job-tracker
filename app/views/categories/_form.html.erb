@@ -1,5 +1,11 @@
-<%= form_for @category do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title%>
-  <%= f.submit%>
+  <%= form_for @category do |f| %>
+<table>
+<tr>
+  <th><%= f.label :title, class: "form-label"%></th>
+  <th><%= f.text_field :title, class: "form-field"%></th>
+</tr>
+<tr>
+  <th colspan=2> <%= f.submit%></th>
+</tr>
+</table>
 <% end %>

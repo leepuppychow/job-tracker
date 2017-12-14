@@ -1,13 +1,8 @@
-<nav>
-  <h1> Welcome to Job Tracker </h1>
-</nav>
-
 <div class="container">
 
-<div>
-  <p class="homepage-links"><%= link_to "COMPANIES", companies_path%></p>
-  <p class="homepage-links"><%= link_to "JOB CATEGORIES", categories_path %></p>
-  <p class="homepage-links"><%= link_to "DASHBOARD", "/dashboard" %></p>
-</div>
+  <h1> Welcome to Job Tracker </h1>
 
+  <%= link_to "COMPANIES", companies_path, class: "homepage-links" %>
+  <%= link_to "JOB CATEGORIES", categories_path, class: "homepage-links" %>
+  <%= link_to "DASHBOARD", "/dashboard", class: "homepage-links" %>
 </div>

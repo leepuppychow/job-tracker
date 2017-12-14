@@ -1,26 +1,40 @@
-Title: <%= @job.title %>
-<br>
+<nav>
+  <h1>Job Title: <%= @job.title %></h1>
+  <%= link_to "Back Home", root_path, class: "nav-links" %>
+  <%= link_to "Company List", companies_path, class: "nav-links" %>
+  <%= link_to "Go to: #{@job.company.name}", company_path(@job.company), class: "nav-links" %>
+</nav>
 
-Description: <%= @job.description %>
-<br>
+<table id="job-show-table">
+  <tr>
+    <th>Description: </th>
+    <th><%= @job.description %></th>
+  </tr>
+  <tr>
+    <th>Level of Interest:  </th>
+    <th><%= @job.level_of_interest %></th>
+  </tr>
+  <tr>
+    <th>City: </th>
+    <th><%= @job.city %></th>
+  </tr>
+  <tr>
+    <th>Company: </th>
+    <th><%= link_to @job.company.name, company_path(@job.company) %></th>
+  </tr>
+  <tr>
+    <th>Category: </th>
+    <th><%= @job.category.title %></th>
+  </tr>
+</table></br>
 
-Level of Interest: <%= @job.level_of_interest %>
-<br>
-
-City: <%= @job.city %>
-<br>
-
-Company: <%= link_to @job.company.name, company_path(@job.company) %></br>
-
-Category: <%= @job.category.title %></br>
-
-Comments: </br>
+<strong>Comments: </strong></br>
 <% @job.comments_ordered.each do |comment| %>
 <%= comment.content %></br>
 <% end %></br>
 
 <%= form_for [@job, @comment] do |f|%>
-<%= f.label :content, "Add Comment:" %>
-<%= f.text_area :content %>
+<%= f.label :content, "Add Comment:" %></br>
+<%= f.text_area :content %></br>
 <%= f.submit %>
 <% end %>

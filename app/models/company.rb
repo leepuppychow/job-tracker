@@ -4,12 +4,11 @@ class Company < ApplicationRecord
   has_many :contacts
 
   def self.top_3_ranked_by_avg_level_of_interest
-    x = find_by_sql(
+    find_by_sql(
       "SELECT AVG(level_of_interest) AS avg_interest, name FROM companies
       JOIN jobs ON companies.id = jobs.company_id
       GROUP BY name
       ORDER BY avg_interest DESC
       LIMIT 3").pluck(:name, :avg_interest)
-    # joins(:jobs).group(:name).average(:level_of_interest)
   end
 end

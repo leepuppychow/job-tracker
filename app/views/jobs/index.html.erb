@@ -1,4 +1,8 @@
-All Jobs for <strong><%= @company.name %></strong>
+<!-- <nav>
+  <h1>All Jobs for<%= @company.name %></h1>
+  <%= link_to "Back Home", root_path, class: "nav-links" %>
+  <%= link_to "New Job", new_company_job_path(@company), class: "nav-links" %>
+</nav>
 
 <% @jobs.each do |job| %>
   <ul><%= link_to job.title, company_job_path(@company, job) %> at <%= job.company.name %></ul>
@@ -16,4 +20,4 @@ All Jobs for <strong><%= @company.name %></strong>
   <%= f.text_field :position %>
   <%= f.label :email %>
   <%= f.text_field :email %>
-<% end %>
+<% end %> -->
